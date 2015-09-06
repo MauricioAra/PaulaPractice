@@ -1,0 +1,55 @@
+
+<div class="unwrap" ng-controller="InformacionPerfilController">
+   <div style="background-image: url(app/img/cancha2.jpg)" class="bg-cover">
+      <div class="p-xl text-center text-white">
+         <h3 class="m0">{{establecimiento.nombre}}</h3>
+         <p>Establecimiento Deportivo</p>
+         <p>{{establecimiento.descripcion}}</p>
+      </div>
+   </div>
+   <div class="text-center bg-gray-dark p-lg mb-xl">
+      <div class="row row-table">
+         <ul class="nav nav-tabs nav-justified">
+        	<div class="col-xs-4 br">
+         	   <li ng-click="mostrarInformacion()">Información</a></li>
+ 			</div>
+ 			<div class="col-xs-4 br">
+         	   <li ng-click="mostrarServicios()">Servicios</a></li>
+ 			</div>
+ 			<div class="col-xs-4 br">
+         	   <li ng-click="mostrarReservaciones()">Calendario</a></li>
+ 			</div>	
+		</ul>
+  
+      </div>
+   </div>
+   <div class="p-lg">
+      <div class="row">
+         <div class="col-lg-9">
+         	<div class="col-lg-12" ui-view=""> </div>
+         </div>
+         <div class="col-lg-3">
+            <div class="panel panel-default">
+               <div class="panel-body">
+                  <div class="text-center">
+                     <h3 class="mt0">{{establecimiento.nombre}}</h3>
+                     <p>Establecimiento Deportivo</p>
+                  </div>
+                  <hr/>
+                  <ul class="list-unstyled ph-xl">
+                     <li>
+                        <em class="fa fa-home fa-fw mr-lg"></em>{{establecimiento.nombre}}</li>
+                     <li>
+                        <em class="fa fa-briefcase fa-fw mr-lg"></em><a href="#">{{establecimiento.paginaWeb}}</a>
+                     </li>
+                     <li>
+                        <em class="fa fa-phone fa-fw mr-lg"></em>{{establecimiento.telefono}}
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<script src="app/js/Modules/Controllers/InformacionPerfilController.js"></script>

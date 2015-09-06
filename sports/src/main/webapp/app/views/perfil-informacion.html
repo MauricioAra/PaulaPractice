@@ -1,0 +1,105 @@
+
+    <!-- START timeline-->
+    <ul class="timeline">
+    <!-- START timeline item DERECHA-->
+    <li class="timeline-inverted">
+    <br>
+    <br>
+    <br>
+        <div class="timeline-badge green">
+            <em class="fa fa-comment"></em>
+        </div>
+        <div class="timeline-panel">
+            <div class="popover right">
+                <div class="arrow"></div>
+                <div class="popover-content">
+                    <div class="table-grid table-grid-align-middle mb">
+                        <div class="col col-xs">
+                        </div>
+                        <div class="col">
+                            <p class="m0">
+                                <a href="#" class="text-muted"><strong>Comentarios</strong></a>
+                            </p>
+                        </div>
+                    </div>
+                    <p class="text-muted mv">Comentá sobre este establecimiento deportivo</p>
+                    <div>
+                    <scrollable height="183	" >
+						<div ng-repeat="review in Reviews">
+                     		<div class="media bb p">
+                        		<small class="pull-right text-muted"></small>
+                        		<div class="pull-left"></div>
+                        		<div class="media-body">
+                          			<span class="media-heading">
+                             			<p class="m0">
+                             			<div ng-controller="EliminarComentario">
+                             				<button ng-show="validarUsuarioId(review)" ng-click="eliminar(review.idComentario)" class="btn btn-sm btn-warning fa fa-trash pull-right"></button>
+                                 		</div>	
+                                 			<strong>{{review.nombreUsuario}}</strong><strong> {{review.apellidoUsuario}}</strong>
+                             			</p>
+                             			<p class="m0 text-muted">{{review.review}}</p>
+                             			
+                          			</span>
+                       	 		</div>
+                      		</div>
+                      	</div>
+                     </scrollable>
+					</div>
+					<div ng-controller="FormReviewController">
+                    	<form method="post" action="" class="mt">
+                    	<fieldset>
+                  			<textarea ng-model="comentario" placeholder="Escribe un comentario..." rows="2" class="form-control no-resize"></textarea>	
+                    	</fieldset>
+                    	</form>
+                    	<button ng-click="registrarReview()" class="btn btn-green">Agregar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <!-- END timeline item-->
+    <!-- START timeline item-->
+    <li>
+    <br>
+    <br>
+    <br>
+        <div class="timeline-badge purple">
+            <em class="fa fa-map-marker"></em>
+        </div>
+        <div class="timeline-panel">
+            <div class="popover left">
+                <div class="arrow"></div>
+                <div class="popover-content">
+                    <div class="table-grid table-grid-align-middle mb">
+                        <div class="col col-xs">
+                        </div>
+                        <div class="col">
+                            <p class="m0">
+                                <strong>Ubicación del establecimiento deportivo.</strong></p>
+                        </div>
+                    </div>
+                    <div id="map" ng-controller="GMapController">
+                        <div ui-map="myMap5" ui-options="mapOptions5" class="gmap"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <!-- END timeline item-->
+    </ul>
+    <div ng-controller = "EliminarComentario">
+    <script type="text/ng-template" id="/modalEliminarReview.html">
+                  <div class="modal-header">
+				  	<button type="button" data-dismiss="modal" aria-hidden="true" class="close"></button>
+					<h4 id="myModalLabel" class="modal-title">Eliminar comentario</h4>
+					</div>
+					<div class="modal-body">¿Desea eliminar el comentario?</div>
+
+					<div class="modal-footer">
+						<button ng-click="ok()" class="btn btn-primary">Sí</button>
+						<button ng-click="cancel()" class="btn btn-warning">No</button>
+					</div>
+               </script>
+    </div>
+    <!-- END timeline-->
+    <script src="app/js/Modules/Controllers/InformacionPerfilController.js"></script>

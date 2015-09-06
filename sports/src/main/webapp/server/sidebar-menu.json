@@ -1,0 +1,33 @@
+[
+  {
+    "text": "Establecimientos",
+    "sref": "app.establecimientos",
+    "icon": "icon-star",
+    "label": "label label-info"
+  },
+  {
+    "text": "Eventos",
+    "sref": "app.eventosIndex",
+    "icon": "icon-flag",
+    "label": "label label-info"
+  },
+  {
+    "text": "Retos",
+    "sref": "app.retos",
+    "icon": "icon-fire",
+    "label": "label label-info"
+  },
+  {
+    "text": "Configuracion",
+    "sref": "#",
+    "icon": "icon-settings",
+    "label": "label label-info",
+    "submenu": [
+      {"text": "Usuarios", "sref": "#"},
+      {"text": "Tipos de servicios", "sref": "#" },
+      {"text": "Tipos de eventos", "sref": "app.tiposEventos" },
+      {"text": "Tipos de actividades deportivas", "sref": "app.actividades" },
+      {"text": "Centros de distribucion", "sref": "app.centrosDistribucion" }
+      ]
+  }
+]
