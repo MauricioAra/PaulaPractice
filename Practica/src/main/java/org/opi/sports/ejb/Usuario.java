@@ -67,6 +67,9 @@ public class Usuario implements Serializable {
 	//bi-directional many-to-one association to Usuario_Rol
 	@OneToMany(mappedBy="usuario")
 	private List<Usuario_Rol> usuarioRols;
+	
+	@OneToMany(mappedBy="usuario")
+	private List<Juego> juegos;
 
 	public Usuario() {
 	}
@@ -331,6 +334,29 @@ public class Usuario implements Serializable {
 		usuarioRol.setUsuario(null);
 
 		return usuarioRol;
+	}
+	
+	//.....
+	public List<Juego> getJuegos() {
+		return this.juegos;
+	}
+
+	public void setJuegos(List<Juego> juegos) {
+		this.juegos = juegos;
+	}
+
+	public Juego addJuego(Juego juego) {
+		getJuegos().add(juego);
+		juego.setUsuario(this);
+
+		return juego;
+	}
+
+	public Juego removeJuego(Juego juego) {
+		getJuegos().remove(juego);
+		juego.setUsuario(null);
+
+		return juego;
 	}
 
 }
