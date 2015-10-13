@@ -15,7 +15,7 @@ import java.util.*;
 public class ActividadDeportivaResponse extends BaseResponse{
 	
 	private List<ActividadDeportivaPOJO> actividadesDeportivas;
-
+	
 	public List<ActividadDeportivaPOJO> getActividadesDeportivas() {
 		return actividadesDeportivas;
 	}
